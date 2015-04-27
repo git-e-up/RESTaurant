@@ -1,10 +1,10 @@
 
 var app = {};
 
+// definitions
+
 app.FoodModel = Backbone.Model.extend();
-
 app.OrderModel = Backbone.Model.extend();
-
 app.PartyModel = Backbone.Model.extend();
 
 
@@ -23,14 +23,89 @@ app.PartyCollection = Backbone.Collection.extend({
   model: app.PartyModel
 });
 
-$(document).ready(function(){
-  app.foodList = new app.FoodCollection();
-  app.orderList = new app.OrderCollection();
-  app.partyList = new app.PartyCollection();
-  app.foodList.fetch();
-  app.orderList.fetch();
-  app.partyList.fetch();
+app.FoodView = Backbone.View.extend({
+  tagName: "h2",
+  template: _.template("<%= name %>"),
+  initialize: function() {
+    this.render();
+  },
+  render: function() {
+    var data = this.model.attributes;
+    var renderedTemplate = this.template(data);
+    this.$el.html(renderedTemplate);
+    // place me later!
+    console.log(this.$el.html());
+    $('body').append(this.$el);
+  }
 });
+
+/*var newModel = new app.FoodModel();
+var newView = new app.FoodView({
+  model: newModel
+});
+newModel.fetch();*/
+
+app.FoodListView = Backbone.View.extend({
+  tagName: "div",
+
+  // template: _.template('<h2><%=food %></h2>')
+  initialize: function(){
+    this.listenTo(this.collection, "sync", this.render);
+  },
+  render: function(){
+    var numOfFoods = this.collection.models.length;
+    // var data = this.model.attributes;
+    $('body').html("all the foods");
+    for (var i = 0; i < numOfFoods; i++) {
+      var model =  this.collection.models[i];
+      var newView = new app.FoodView({ model: model });
+      //$('body').append('<br>' + model.attributes.name);
+    };
+    // this.$el.html( this. template (data) );
+  }
+});
+app.OrderView = Backbone.View.extend({
+
+});
+app.PartyView = Backbone.View.extend({
+
+});
+
+//instances
+app.myFoodModel = new app.FoodModel();
+app.myFoodModel.url =  '/api/foods';
+
+/*app.myFoodView = new app.FoodView({
+  model: app.myFoodModel
+});
+app.myFoodModel.fetch();
+*/
+
+app.myFoodCollection = new app.FoodCollection({
+  model: app.FoodModel,
+  url: '/api/foods'
+});
+app.myFoodListView = new app.FoodListView({
+  collection: app.myFoodCollection
+});
+app.myFoodCollection.fetch();
+
+
+
+
+
+
+
+
+//
+// $(document).ready(function(){
+//   app.foodList = new app.FoodCollection();
+//   app.orderList = new app.OrderCollection();
+//   app.partyList = new app.PartyCollection();
+//   app.foodList.fetch();
+//   app.orderList.fetch();
+//   app.partyList.fetch();
+// });
 ///////////
 // var LesMizView = Backbone.View.extend({
 //   tagName: "p",

@@ -76,8 +76,6 @@ post '/api/orders' do
   content_type :json
   order = Order.create(params[:order])
   order.to_json
-  # sentence = '/api/orders'
-  # {sentence: sentence}.to_json
 end
 
 patch '/api/orders/:id' do
@@ -115,7 +113,7 @@ end
 get '/api/parties/:id' do
   content_type :json
   party = Party.find(params[:id].to_i)
-  party.to_json
+  party.to_json(:include=> [:foods, :orders])
 end
 
 post '/api/parties' do
@@ -128,6 +126,7 @@ patch '/api/parties/:id' do
   content_type :json
   party = Party.find(params[:id].to_i)
   party.update(params[:party])
+
 end
 
 put '/api/parties/:id' do
@@ -140,4 +139,18 @@ delete '/api/parties/:id' do
   content_type :json
   party = Party.find(params[:id].to_i)
   party.destroy
+end
+#********************************************
+
+# get '/api/parties/:id/receipt' do
+#   content_type :json
+#   party = Party.find(params[:id].to_i)
+#   party.to_json(include: :foods)
+# end
+
+
+patch '/api/parties/:id/checkout' do
+  content_type :json
+  party = Party.find(params[:id].to_i)
+  party.to_json(include: :orders)
 end
