@@ -8,7 +8,7 @@ Bundler.require
 # ***** CONNECTION *****
 ActiveRecord::Base.establish_connection(
   :adapter => 'postgresql',
-  :database => 'restaurant_pos'
+  :database => 'bisquerie'
 )
 
 # ***** HELPERS *****

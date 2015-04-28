@@ -25,7 +25,7 @@ class FoodsController < Sinatra::Base
   end
 
   get '/:id' do
-    food = Food.find(params[:id])
+    food = Food.find(params[:id].to_i)
     content_type :json
     food.to_json
   end
@@ -39,7 +39,7 @@ class FoodsController < Sinatra::Base
 
   patch '/:id' do
     authenticate_api!
-    food = Food.find(params[:id])
+    food = Food.find(params[:id].to_i)
     food.update(food_params)
     content_type :json
     food.to_json
@@ -47,7 +47,7 @@ class FoodsController < Sinatra::Base
 
   put '/:id' do
     authenticate_api!
-    food = Food.find(params[:id])
+    food = Food.find(params[:id].to_i)
     food.update(food_params)
     content_type :json
     food.to_json
@@ -55,7 +55,7 @@ class FoodsController < Sinatra::Base
 
   delete '/:id' do
     authenticate_api!
-     Food.destroy(params[:id])
+     Food.destroy(params[:id].to_i)
      content_type :json
      {success: "ok"}.to_json
   end

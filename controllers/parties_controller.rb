@@ -24,7 +24,7 @@ class PartiesController < Sinatra::Base
   end
 
   get '/:id' do
-    party = Party.find(params[:id])
+    party = Party.find(params[:id].to_i)
     content_type :json
     party.to_json(include: :foods)
   end
@@ -36,21 +36,21 @@ class PartiesController < Sinatra::Base
   end
 
   patch '/:id' do
-    party = Party.find(params[:id])
+    party = Party.find(params[:id].to_i)
     party.update(party_params)
     content_type :json
     party.to_json(include: :foods)
   end
 
   put '/:id' do
-    party = Party.find(params[:id])
+    party = Party.find(params[:id].to_i)
     party.update(party_params)
     content_type :json
     party.to_json(include: :foods)
   end
 
   delete '/:id' do
-     Party.destroy(params[:id])
+     Party.destroy(params[:id].to_i)
      content_type :json
      {success: "ok"}.to_json
   end

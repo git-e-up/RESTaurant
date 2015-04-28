@@ -7,10 +7,27 @@ h1{
 }
 ul {
   font-weight: bold;
-  float: left;
+  /*float: left;*/
   background: red;
 
 }
 li {
   font-weight: normal;
+}
+body{
+  background-color: lightblue;
+}
+
+
+
+.food-selected{
+  background-color: lightgreen;
+}
+.party-selected{
+  background-color: pink;
+}
+
+.interface-list{
+  display: inline-block;
+  border: 1px solid black;
 }
