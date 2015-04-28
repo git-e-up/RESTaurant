@@ -1,3 +1,16 @@
 body {
   background-color: lightblue;
+  font-family: 'calibri', sans-serif;
+}
+h1{
+  width: 100%;
+}
+ul {
+  font-weight: bold;
+  float: left;
+  background: red;
+
+}
+li {
+  font-weight: normal;
 }
