@@ -5,7 +5,7 @@ app.PartyView = Backbone.View.extend({
     this.listenTo(this.model,'change', this.render);
     this.listenTo(this.model,'delete', this.remove);
   },
-  template: _.template('<h3><%= id %><button class="select-party">Select</button>'),
+  template: _.template('<h3><%= name %> party of <%= count %>. Table number: <%= id %> <button class="select-party"> Select </button>'),
   tagName: 'li',
   className: 'party',
   render: function(){
