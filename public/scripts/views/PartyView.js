@@ -54,6 +54,15 @@ app.PartyView = Backbone.View.extend({
     this.listenTo(this.model,'change', this.render);
     this.listenTo(this.model,'delete', this.remove);
   },
+///
+
+
+  // var orders = this.model.get(foods)
+  // for (var i = 0; i < orders.length; i++) {
+  //   var total = orders[i] * foods.cost
+  // },
+
+////
   template: _.template('<h3><%= name %> party of <%= count %>. Table number: <%= id %> <button class="select-party"> Select </button>'),
   tagName: 'li',
   className: 'party',
@@ -66,7 +75,10 @@ app.PartyView = Backbone.View.extend({
     var foods = this.model.get('foods')
     var foodList = $('<ul>');
     for (var i = 0; i < foods.length; i++) {
-      foodList.append( $('<li>').text( foods[i]['name'] ) );
+      var message = foods[i]['name'];
+      message += foods[i]['cost'];
+      foodList.append( $('<li>').text( message ));
+
     }
     this.$el.append(foodList);
   },

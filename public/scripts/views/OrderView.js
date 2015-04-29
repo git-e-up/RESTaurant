@@ -5,11 +5,21 @@ app.OrderView = Backbone.View.extend({
     this.listenTo(this.model,'change', this.render);
     this.listenTo(this.model,'delete', this.remove);
   },
+  // payment: function() {
+  //   if (order.paid == true)
+  //   "paid up"
+  //   else
+  //   "payment required"
+  //   end
+  // }
+
+
   template: _.template('<h3>order #<%= id %> paid? <%= paid %> <%=food.name %> $<%=food.cost %>'),
   tagName: 'li',
   className: 'order',
   render: function(){
     this.$el.append( this.template( this.model.attributes ) );
+    // this.$el.append( this.payment() );
     // this.renderFoodList();
     return this;
   },
