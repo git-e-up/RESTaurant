@@ -5,7 +5,7 @@ app.OrderView = Backbone.View.extend({
     this.listenTo(this.model,'change', this.render);
     this.listenTo(this.model,'delete', this.remove);
   },
-  template: _.template('<h3>order #<%= id %> paid? <%= paid %>'),
+  template: _.template('<h3>order #<%= id %> paid? <%= paid %> <%=food.name %> $<%=food.cost %>'),
   tagName: 'li',
   className: 'order',
   render: function(){
@@ -14,10 +14,10 @@ app.OrderView = Backbone.View.extend({
     return this;
   },
   // renderFoodList: function(){
-  //   var foods = this.model.get('foods')
+  //   var foods = this.model.get('food')
   //   var foodList = $('<ul>');
-  //   for (var i = 0; i < foods.length; i++) {
-  //     foodList.append( $('<li>').text( foods[i]['food_id'] ) );
+  //   for (var i = 0; i < food.length; i++) {
+  //     foodList.append( $('<li>').text( foods[i]['name'] ) );
   //   }
   //   this.$el.append(foodList);
   // }

@@ -20,33 +20,33 @@ class OrdersController < Sinatra::Base
   get '/' do
     orders = Order.all
     content_type :json
-    orders.to_json
+    orders.to_json(include: :food)
   end
 
   get '/:id' do
     order = Order.find(params[:id])
     content_type :json
-    order.to_json
+    order.to_json(include: :food)
   end
 
   post '/' do
     order = Order.create(order_params)
     content_type :json
-    order.to_json
+    order.to_json(include: :food)
   end
 
   patch '/:id' do
     order = Order.find(params[:id])
     order.update(order_params)
     content_type :json
-    order.to_json
+    order.to_json(include: :food)
   end
 
   put '/:id' do
     order = Order.find(params[:id])
     order.update(order_params)
     content_type :json
-    order.to_json
+    order.to_json(include: :food)
   end
 
   delete '/:id' do
