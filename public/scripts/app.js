@@ -38,22 +38,22 @@ $(document).ready(function(){
   app.foods.fetch();
   app.orders.fetch();
 
-//   $('#place-order').on('click', function(){
-//
-//     var partyId = app.partySelection.get('id');
-//     var foodId = app.foodSelection.get('id');
-//
-//     $.ajax({
-//       method: 'post',
-//       url: '/api/orders',
-//       data: {order: {party_id: partyId, food_id: foodId} },
-//       success: function() {
-//         app.parties.fetch( {reset: true} );
-//         $('.food-selected').removeClass('.food-selected'); //remove selected class so color goes away
-//         $('.party-selected').removeClass('.party-selected');
-//       }
-//     });
-//   });
+  $('#place-order').on('click', function(){
+
+    var partyId = app.partySelection.get('id');
+    var foodId = app.foodSelection.get('id');
+
+    $.ajax({
+      method: 'post',
+      url: '/api/orders',
+      data: {order: {party_id: partyId, food_id: foodId} },
+      success: function() {
+        app.parties.fetch( {reset: true} );
+        $('.food-selected').removeClass('.food-selected'); //remove selected class so color goes away
+        $('.party-selected').removeClass('.party-selected');
+      }
+    });
+  });
 //
 });
 
