@@ -1,5 +1,5 @@
 var app = app || {};
 
-app.FoodCollection = Backbone.Collection.extend({
+app.OrderCollection = Backbone.Collection.extend({
   url: '/api/orders'
 });

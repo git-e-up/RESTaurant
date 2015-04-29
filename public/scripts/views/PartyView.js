@@ -1,3 +1,52 @@
+///// in class Wed morning
+var app = app || {};
+
+app.PartyView = Backbone.View.extend({
+  initialize: function(){
+    this.listenTo(this.model, 'change', this.render);
+  },
+    tagName: 'li',
+    className: 'party',
+
+  template: _.template('<p><%= id</p>'),
+
+  render: function(){
+    var data = this.model.attributes;
+    var renderedHTML = this.template( data );
+    this.$el.html( renderedHTML );
+
+    var foodList = renderFoodList();
+    this.$el.append(foodsList);
+  },
+
+  renderFoodList: function() {
+
+  var foods = this.model.get('foods');
+  var foodsList = $('<ul>');
+  for (var i = 0; i < foods.length; i++) {
+    var foodItem = foods[i];
+    var newLi = $('<li>').html( foodItem.name );
+    foodsList.append(newLi);
+  }
+}
+    // Wild West!
+
+    // <li class='party'>
+    //   <h3>
+    //   3
+    //   </h3>
+    //   <ul class='orders'>
+    //     <li>cheese</li>
+    //     <li>bacon</li>
+    //   </ul>
+    // </li>
+
+})
+
+
+
+////prior
+
 var app = app || {};
 
 app.PartyView = Backbone.View.extend({
@@ -23,6 +72,7 @@ app.PartyView = Backbone.View.extend({
   },
   events:{
     'click .select-party': 'selectParty'
+    //'event .css selector': 'function to run'
   },
   selectParty: function(){
     $('.party-selected').removeClass('party-selected');

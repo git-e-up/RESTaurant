@@ -11,6 +11,10 @@ $(document).ready(function(){
     model: app.PartyModel
   })
 
+  app.orders = new app.OrderCollection({
+    model: app.OrderModel
+  })
+
   app.foodListPainter = new app.GeneralListView({
     modelView: app.FoodView,
     collection: app.foods,
@@ -23,9 +27,34 @@ $(document).ready(function(){
     el: $('#party-list'),
   });
 
+  app.orderListPainter = new app.GeneralListView({
+    modelView: app.OrderView,
+    collection: app.orders,
+    el: $('#order-list'),
+  });
+
+
   app.parties.fetch();
   app.foods.fetch();
+  app.orders.fetch();
 
+//   $('#place-order').on('click', function(){
+//
+//     var partyId = app.partySelection.get('id');
+//     var foodId = app.foodSelection.get('id');
+//
+//     $.ajax({
+//       method: 'post',
+//       url: '/api/orders',
+//       data: {order: {party_id: partyId, food_id: foodId} },
+//       success: function() {
+//         app.parties.fetch( {reset: true} );
+//         $('.food-selected').removeClass('.food-selected'); //remove selected class so color goes away
+//         $('.party-selected').removeClass('.party-selected');
+//       }
+//     });
+//   });
+//
 });
 
 
