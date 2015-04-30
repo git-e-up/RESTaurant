@@ -3,6 +3,7 @@ class OrdersController < Sinatra::Base
 
   # ***** Helpers *****
   def order_params
+    # binding.pry
     return params[:order] if params[:order]
     body_data = {}
     @request_body ||= request.body.read.to_s
