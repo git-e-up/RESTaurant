@@ -1,14 +1,4 @@
-// jQuery(document).ready(function() {
-//   jQuery("time.timeago").timeago();
-// });
-// jQuery(document).ready(function() {
-//   jQuery("abbr.timeago").timeago();
-// });
 
-//
-// var today = new Date();
-//
-// var ellapsed = +new Date() - today;
 
 
 var ellapsed = jQuery.timeago(new Date());
@@ -24,13 +14,7 @@ app.OrderView = Backbone.View.extend({
     this.listenTo(this.model,'change', this.render);
     this.listenTo(this.model,'delete', this.remove);
   },
-  // payment: function() {
-  //   if (order.paid == true)
-  //   "paid up"
-  //   else
-  //   "payment required"
-  //   end
-  // }
+
 
 
 
@@ -40,13 +24,12 @@ app.OrderView = Backbone.View.extend({
   className: 'order',
   render: function(){
     this.$el.append( this.template( this.model.attributes ) );
-    // this.$el.append(today);
-    this.$el.append(ellapsed+ " since order");
 
-    // this.$el.append( this.payment() );
-    // this.renderFoodList();
     return this;
   },
+/////////////
+
+
 
 
 });
