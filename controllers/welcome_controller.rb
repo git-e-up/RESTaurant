@@ -24,4 +24,8 @@ class WelcomeController < Sinatra::Base
     end
   end
 
+  get '/kitchen' do
+    erb :kitchen
+  end
+
 end
