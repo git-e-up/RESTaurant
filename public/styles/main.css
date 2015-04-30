@@ -1,10 +1,9 @@
 body {
   background-color: lightblue;
-  font-family: 'calibri', sans-serif;
+  background-image: url("http://i.imgur.com/XBOlNnC.jpg");
+  font-family: 'ariel', sans-serif;
 }
-h1{
-  width: 100%;
-}
+
 ul {
   font-weight: bold;
   /*float: left;*/
@@ -17,8 +16,16 @@ li {
 body{
   background-color: lightblue;
 }
+input[type=submit] {
+  color: black;
+  font-size: x-large;
+  border: 2px black;
+}
 
-
+input[type=text] {
+  color: black;
+  font-size: x-large;
+}
 
 .food-selected{
   background-color: lightgreen;
@@ -28,9 +35,27 @@ body{
 }
 
 .interface-list{
-  display: inline-block;
+  display: block;
   border: 1px solid black;
+  float: left;
+  width: 25%;
 }
 #auth {
   background: red;
+}
+#place-order {
+  color: black;
+  text-decoration: none;
+  height: 10%;
+  width: 10%;
+  margin: 200px, 200px, 100px;
+  font-size: x-large;
+  /*display: block;*/
+}
+
+
+#place-order:hover {
+  background-color: white;
+  color: black;
+  transition: 4s;
 }
