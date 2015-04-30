@@ -1,2 +1,3 @@
 # RESTaurant
-An ordering system/basic POS system
+An ordering and POS system for a bisque restaurant
+
