@@ -74,13 +74,19 @@ app.PartyView = Backbone.View.extend({
   renderFoodList: function(){
     var foods = this.model.get('foods')
     var foodList = $('<ul>');
+    var subtotal = 0;
     for (var i = 0; i < foods.length; i++) {
       var message = foods[i]['name'];
       message += ' $';
       message += foods[i]['cost'];
       foodList.append( $('<li>').text( message ));
-
+      subtotal += parseInt(foods[i].cost);
+      tax = subtotal*.0925
+      total = subtotal + tax
     }
+    foodList.append( $('<li id=subtotal>').text( 'Subtotal: $'+subtotal ));
+    foodList.append( $('<li id=subtotal>').text( 'Sales Tax 9.25%: $'+tax.toFixed(2) ));
+    foodList.append( $('<li id=total>').text( 'Total Due: $'+total.toFixed(2) ));
     this.$el.append(foodList);
   },
   events:{

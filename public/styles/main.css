@@ -59,3 +59,11 @@ input[type=text] {
   color: black;
   transition: 4s;
 }
+#total{
+  font-size: x-large;
+  font-weight: bold;
+}
+#subtotal{
+  font-size: large;
+  font-weight: bold;
+}

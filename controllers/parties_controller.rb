@@ -55,15 +55,17 @@ class PartiesController < Sinatra::Base
      {success: "ok"}.to_json
   end
 
-  get '/:id/receipt' do
-    content_type :json
-    foods = Party.find(params[:id]).foods
-    puts foods
-    total = 0
-     foods.map do |item|
-      total += food.cost
-      puts item
-     end
-    total.to_json
-   end
+  # get '/:id/receipt' do
+  #   content_type :json
+  #   foods = Party.find(params[:id]).foods
+  #
+  #
+  #   puts foods
+  #   total = 0
+  #    foods.map do |item|
+  #     total += food.cost
+  #     puts item
+  #    end
+  #   total.to_json
+  #  end
 end
