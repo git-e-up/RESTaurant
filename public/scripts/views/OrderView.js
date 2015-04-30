@@ -14,7 +14,7 @@ app.OrderView = Backbone.View.extend({
   // }
 
 
-  template: _.template('<h3>order #<%= id %> paid? <%= paid %> <%=food.name %> $<%=food.cost %>'),
+  template: _.template('<h3>order #<%= id %> <%=food.name %>  served? <%= paid %> '),
   tagName: 'li',
   className: 'order',
   render: function(){
