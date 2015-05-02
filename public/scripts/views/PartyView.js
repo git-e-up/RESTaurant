@@ -86,13 +86,13 @@ app.PartyView = Backbone.View.extend({
     app.partySelection = this.model;
   },
 
-  printReceipt: function PrintDiv() {
+  printReceipt: function() {
      var divToPrint = this.$el;
      var popupWin = window.open('', '_blank', 'width=300,height=300');
      popupWin.document.open();
      popupWin.document.write('<html><body onload="window.print()">' + divToPrint.html() + '</html>');
       popupWin.document.close();
-          }
+  }
 
 
 });
