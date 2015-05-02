@@ -14,10 +14,6 @@ app.PartyView = Backbone.View.extend({
 ///
 
 
-  // var orders = this.model.get(foods)
-  // for (var i = 0; i < orders.length; i++) {
-  //   var total = orders[i] * foods.cost
-  // },
 
 ////
   template: _.template('<h3><%= name %> party of <%= count %>. Table number: <%= id %> <button class="select-party"> Select </button> <button class="receipt"> Receipt </button>'),
@@ -89,14 +85,7 @@ app.PartyView = Backbone.View.extend({
     this.$el.addClass('party-selected');
     app.partySelection = this.model;
   },
-  // printReceipt: function(){
-    // $('#total').addClass('massive');
-    // $('#total').show().printElement();
-    // this.$el.addClass('massive');
-    // app.partySelection = this.model;
-    // alert($('#total'))
 
-  // }
   printReceipt: function PrintDiv() {
      var divToPrint = this.el;
      var popupWin = window.open('', '_blank', 'width=300,height=300');
@@ -107,11 +96,3 @@ app.PartyView = Backbone.View.extend({
 
 
 });
-
-// <input type="button" value="print" onclick="PrintDiv();" />
-// events:{
-//   'click .receipt': 'printReceipt'
-// }
-// printReceipt: function(){
-//   $('.receipt').show().printElement();
-// }
