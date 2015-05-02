@@ -13,11 +13,16 @@ app.FoodView = Backbone.View.extend({
     return this;
   },
   events:{
-    'click .select-food': 'selectFood'
+    'click .select-food': 'selectFood',
+    // 'click .select-food': 'bisquePic'
   },
   selectFood: function(){
     $('.food-selected').removeClass('food-selected'); //for css to show selected one
     this.$el.addClass('food-selected'); //for css to show selected one
     app.foodSelection = this.model;
-  }
+  },
+  // bisquePic: function(){
+  //   $('div').addClass('bisque-pic')
+  // }
+
 });

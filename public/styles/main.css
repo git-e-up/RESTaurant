@@ -7,15 +7,15 @@ body {
 ul {
   font-weight: bold;
   /*float: left;*/
-  background: red;
+  background-color:rgba(100,100,0,.8);
+
 
 }
 li {
   font-weight: normal;
+
 }
-body{
-  background-color: lightblue;
-}
+
 input[type=submit] {
   color: black;
   font-size: x-large;
@@ -28,7 +28,11 @@ input[type=text] {
 }
 
 .food-selected{
-  background-color: lightgreen;
+  /*background-color: lightgreen;*/
+  background-image: url("http://upload.wikimedia.org/wikipedia/commons/8/89/Lobster_bisque.jpg");
+  background-size: 120px 100px;
+  background-repeat: no-repeat;
+
 }
 .party-selected{
   background-color: pink;
@@ -55,9 +59,9 @@ input[type=text] {
 
 
 #place-order:hover {
-  background-color: white;
-  color: black;
-  transition: 4s;
+  background-color: black;
+  color: white;
+  transition: 1s;
 }
 #total{
   /*font-size: x-large;*/
@@ -69,4 +73,9 @@ input[type=text] {
 }
 .massive {
   font-size: 1385;
+}
+
+.bisque-pic {
+    background-image: url("http://sharemykitchen.com/wp-content/uploads/2011/08/prawn-bisque-1.jpg"); /* no need for qoutes */
+
 }

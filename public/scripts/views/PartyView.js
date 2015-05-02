@@ -89,14 +89,26 @@ app.PartyView = Backbone.View.extend({
     this.$el.addClass('party-selected');
     app.partySelection = this.model;
   },
-  printReceipt: function(){
-    $('#total').addClass('massive');
+  // printReceipt: function(){
+    // $('#total').addClass('massive');
+    // $('#total').show().printElement();
     // this.$el.addClass('massive');
     // app.partySelection = this.model;
     // alert($('#total'))
-  }
+
+  // }
+  printReceipt: function PrintDiv() {
+     var divToPrint = this.el;
+     var popupWin = window.open('', '_blank', 'width=300,height=300');
+     popupWin.document.open();
+     popupWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
+      popupWin.document.close();
+          }
+
 
 });
+
+// <input type="button" value="print" onclick="PrintDiv();" />
 // events:{
 //   'click .receipt': 'printReceipt'
 // }
