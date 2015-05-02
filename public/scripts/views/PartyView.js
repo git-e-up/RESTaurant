@@ -61,9 +61,12 @@ app.PartyView = Backbone.View.extend({
       var time = startTime - Date.now();
       var secondsLeft = ((1000 * 60 * 5) + time)/1000;
 
-
+      if (secondsLeft > 0) {
       timerDisplay.text( secondsLeft +" seconds until Bisquification");
-
+      }
+      else {
+        timerDisplay.text("served")
+      }
     }
 
     setInterval(updateTimer, 100);
