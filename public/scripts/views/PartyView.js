@@ -63,6 +63,7 @@ app.PartyView = Backbone.View.extend({
 
       if (secondsLeft > 0) {
       timerDisplay.text( secondsLeft +" seconds until Bisquification");
+      timerDisplay.css("background-color:red");
       }
       else {
         timerDisplay.text("served")
