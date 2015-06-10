@@ -6,7 +6,15 @@ require 'bundler/setup'
 Bundler.require
 
 # ***** CONNECTION *****
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
+db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/bisquerie')
+ActiveRecord::Base.establish_connection(
+:adapter => 'postgresql',
+:host     => db.host,
+:username => db.user,
+:password => db.password,
+:database => db.path[1..-1],
+:encoding => 'utf8'
+)
 
 # ***** HELPERS *****
 require './helpers/session_helpers'
