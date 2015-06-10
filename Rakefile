@@ -32,7 +32,7 @@ namespace :db do
   desc "Fill Database some Junk Data"
   task :junk_data do
 
-    Generate random Food
+    # Generate random Food
     foods_starting = ['Chicken', 'Veggie', 'Beef', 'Rice']
     food_ending = ['Salad', 'Soup', 'Plate', 'Bowl']
     cuisines = ['Lite', 'Homecooking', 'Party', 'Bar Food']
