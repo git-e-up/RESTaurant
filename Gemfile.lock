@@ -52,6 +52,7 @@ DEPENDENCIES
   json
   pg
   pry
+  rack
   rake
   sinatra
   sinatra-activerecord
