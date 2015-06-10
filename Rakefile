@@ -35,12 +35,12 @@ namespace :db do
     # Generate random Food
     foods_starting = ['Chicken', 'Veggie', 'Beef', 'Rice']
     food_ending = ['Salad', 'Soup', 'Plate', 'Bowl']
-    cuisines = ['Lite', 'Homecooking', 'Party', 'Bar Food']
+    # cuisines = ['Lite', 'Homecooking', 'Party', 'Bar Food']
     rand(5..15).times do
       Food.create({
           name: ( foods_starting.sample + ' ' + food_ending.sample),
-          cents: rand(500..1500),
-          cuisine: cuisines.sample
+          cost: rand(500..1500),
+          # cuisine: cuisines.sample
       })
     end
 
@@ -48,7 +48,7 @@ namespace :db do
     rand(5..15).times do |num|
       Party.create({
         id: num,
-        is_paid: [true, false, false].sample
+        paid: [true, false, false].sample
       })
     end
 
