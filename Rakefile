@@ -58,7 +58,7 @@ namespace :db do
     rand(10..35).times do |num|
       Order.create({
         party: parties.sample,
-        food: foods.sample
+        food: foods.sample,
         paid: [true, false, false].sample
       })
     end
