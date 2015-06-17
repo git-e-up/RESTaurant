@@ -1,16 +1,21 @@
 <html>
   <head>
     <title>RESTaurant</title>
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/bootstrap.css.map">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/main.css">
   </head>
   <body>
     <!-- <<img src="http://i.imgur.com/XBOlNnC.jpg" alt="" /> -->
     <h1>
     Bisque Please! Your neighborhood bisquerie!
-  </h1>
-    <ul class='interface-list' id='menu-list'> Check out these bisques!
+    </h1>
+    <div class="row">
+    <ul class='interface-list col-sm-5' id='menu-list'> Check out these bisques!
     </ul>
-    <ul class='interface-list' id='party-list'>
+
+    <ul class='interface-list col-sm-5' id='party-list'>
     </ul>
     <!-- <ul class='interface-list' id='order-list'>
     </ul> -->
@@ -24,7 +29,7 @@
     </form>
 
 
-    <button id='place-order'>
+    <button class="col-sm-1" id='place-order'>
     Order
   </button>
     <div>
