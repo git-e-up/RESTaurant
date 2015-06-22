@@ -16,7 +16,7 @@ app.PartyView = Backbone.View.extend({
 
 
 ////
-  template: _.template('<h3><%= name %> party of <%= count %>. Table number: <%= id %> <button class="select-party"> Select </button> <button class="receipt"> Receipt </button>'),
+  template: _.template('<h3><%= name %> party of <%= count %>. Table number: <%= id %> <button class="select-party glyphicon glyphicon-check"> Select Party </button> <button class="receipt glyphicon glyphicon-print"> Print Receipt </button>'),
   tagName: 'li',
   className: 'party',
   render: function(){

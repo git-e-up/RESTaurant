@@ -5,7 +5,7 @@ app.FoodView = Backbone.View.extend({
     this.listenTo(this.model,'change', this.render);
     this.listenTo(this.model,'delete', this.remove);
   },
-  template: _.template('<h3><%= name %></h3><p>$<%= cost %></p><button class="select-food">Select</button>'),
+  template: _.template('<h3><%= name %></h3><p>$<%= cost %></p><button class="select-food glyphicon glyphicon-thumbs-up">Select Bisque</button>'),
   tagName: 'li',
   className: 'food',
   render: function(){
@@ -14,7 +14,8 @@ app.FoodView = Backbone.View.extend({
   },
   events:{
     'click .select-food': 'selectFood',
-  
+
+
   },
   selectFood: function(){
     $('.food-selected').removeClass('food-selected'); //for css to show selected one
