@@ -2,7 +2,7 @@ body {
   background-color: lightblue;
   background-image: url("http://i.imgur.com/XBOlNnC.jpg");
   font-family: 'ariel', sans-serif;
-  margin-top: 70px;
+  /*margin-top: 70px;*/
 }
 
 ul {
@@ -54,12 +54,12 @@ input[type=text] {
 #place-order {
   color: black;
   text-decoration: none;
-  /*height: 10%;
-  width: 15%;
+  height: 50px;
+  /*width: 15%;
   margin: 200px, 200px, 100px;*/
   font-size: x-large;
   /*display: block;*/
-  position: fixed;
+  /*position: fixed;*/
   display:table-cell;
   vertical-align: middle;
   margin-left:auto;
