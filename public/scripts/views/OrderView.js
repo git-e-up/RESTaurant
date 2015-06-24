@@ -1,7 +1,7 @@
 
 
 
-var ellapsed = jQuery.timeago(new Date());
+// var ellapsed = jQuery.timeago(new Date());
 
 
 
