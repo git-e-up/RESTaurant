@@ -7,30 +7,14 @@ body {
   z-index: -1;
 }
 
-ul {
-  font-weight: bold;
-  /*float: left;*/
-  /*background-color:rgba(100,100,0,.8);*/
 
 
-}
 
 
-li {
-  font-weight: normal;
-
-}
-
-input[type=submit] {
-  color: black;
-  /*font-size: x-large;*/
-  border: 2px black;
-}
-
-input[type=text] {
+/*input[type=text] {
   color: black;
   font-size: x-large;
-}
+}*/
 
 .food-selected{
   /*background-color: lightgreen;*/
@@ -73,7 +57,7 @@ input[type=text] {
   transition: 1s;
 }
 
-input {
+/*input {
   color: black;
   text-decoration: none;
   /*height: 10%;
@@ -82,7 +66,7 @@ input {
   font-size: large;
   /*display: block;*/
   background-color: rgba(255,255,255,.9);
-}
+}*/
 
 
 input:hover {
