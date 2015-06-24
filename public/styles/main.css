@@ -1,14 +1,16 @@
 body {
   background-color: lightblue;
-  background-image: url("http://i.imgur.com/XBOlNnC.jpg");
+  /*background-image: url("http://i.imgur.com/XBOlNnC.jpg");*/
   font-family: 'ariel', sans-serif;
-  /*margin-top: 70px;*/
+  margin-top: 70px;
+  /*background-color:rgba(0, 0, 0, 0.1);*/
+  z-index: -1;
 }
 
 ul {
   font-weight: bold;
   /*float: left;*/
-  background-color:rgba(100,100,0,.8);
+  /*background-color:rgba(100,100,0,.8);*/
 
 
 }
