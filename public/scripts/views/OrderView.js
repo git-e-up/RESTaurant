@@ -15,11 +15,14 @@ app.OrderView = Backbone.View.extend({
     this.listenTo(this.model,'delete', this.remove);
   },
 
+  // var t = "<%= created_at  %>".split(/[- :]/);
+  // var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
 
 
+//   _.templateSettings = { interpolate: [0-9]{1,4}/[0-9]{1,2}/[0-9]{1,2} [0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2}
+// }
 
-
-  template: _.template('<h3>order #<%= id %> <%=food.name %>  served? <%= paid %>' ),
+  template: _.template('<h3>order #<%= id %> <%=food.name %> served? <%= paid %> (order placed at <%= created_at %>)' ),
   tagName: 'li',
   className: 'order',
   render: function(){
@@ -27,6 +30,8 @@ app.OrderView = Backbone.View.extend({
 
     return this;
   },
+
+
 /////////////
 
 

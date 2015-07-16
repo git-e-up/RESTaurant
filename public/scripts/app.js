@@ -43,6 +43,7 @@ $(document).ready(function(){
     var partyId = app.partySelection.get('id');
     var foodId = app.foodSelection.get('id');
 
+
     $.ajax({
       method: 'post',
       url: '/api/orders',
