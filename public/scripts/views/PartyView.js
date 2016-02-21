@@ -57,6 +57,7 @@ app.PartyView = Backbone.View.extend({
   renderTimerNode: function(startTime){
     var timerDisplay = $('<h3>');
 
+
     function updateTimer(){
       var time = startTime - Date.now();
       var secondsLeft = ((1000 * 60 * 5) + time)/1000;
@@ -79,9 +80,19 @@ app.PartyView = Backbone.View.extend({
 
 
   },
+
+
+
+  set_current_house: function() {
+        // Presumably this view has a model that is the house in question...
+        app_state.set('current_house', this.model.id);
+  },
+
   events:{
     'click .select-party': 'selectParty',
-    'click .receipt': 'printReceipt'
+    'click .receipt': 'printReceipt',
+    'click #place-order': 'set_current_house',
+
     //'event .css selector': 'function to run'
   },
   selectParty: function(){
